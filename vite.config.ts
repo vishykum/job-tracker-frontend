@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "job-tracker-frontend",
+  base: "/job-tracker-frontend/",
   plugins: [
     react(),
     tailwindcss(),
