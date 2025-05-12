@@ -84,7 +84,10 @@ const ApplicationsPage = () => {
   return (
     <div className="flex gap-4 h-full">
       <div className="flex flex-col flex-1 space-y-6">
-        <ApplicationChart applications={applications} />
+        <ApplicationChart   applications={[...applications].sort(
+          (a, b) => new Date(a.date_applied).getTime() - new Date(b.date_applied).getTime()
+          )} 
+        />
         <FilterBar original={applications} setFiltered={setFiltered} />
         <ApplicationTable
           applications={filtered}

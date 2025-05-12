@@ -6,7 +6,7 @@ interface Props {
 
 const TrendPanel = ({ applications }: Props) => {
   const total = applications.length;
-  const today = new Date().toISOString().slice(0, 10);
+  const today = new Date().toLocaleDateString("sv-SE"); // "sv-SE" gives YYYY-MM-DD format
   const todayCount = applications.filter((a) => a.date_applied === today).length;
 
   const interviewCount = applications.filter((a) =>
